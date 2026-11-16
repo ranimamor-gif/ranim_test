@@ -25,10 +25,14 @@ export class TravelService {
     return `This action returns all travel`;
   }
 
-  findOne(id: number) {
-    
-    return `This action returns a #${id} travel`;
-  }
+  findOne(id: number) : trips{
+const Voyage = this.trips.find((V) => V.id === id);
+if (!Voyage) {
+throw new NotFoundException(`voyage ${id} introuvable`);
+}
+return Voyage;
+}
+  
 
   update(id: number, updateTravelDto: UpdateTravelDto) {
     return `This action updates a #${id} travel`;
