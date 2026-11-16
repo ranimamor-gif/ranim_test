@@ -3,6 +3,7 @@ import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ProductModule } from './product/product.module.js';
+import { TravelModule } from './travel/travel.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -17,6 +18,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'ranim_test',
     }),
     ProductModule,
+    TravelModule,
   ],
   controllers: [AppController],
   providers: [AppService],
